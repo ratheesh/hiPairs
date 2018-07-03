@@ -51,8 +51,8 @@ let g:hiPairs_exists_matchaddpos = exists("*matchaddpos")
 let blacklist = ['vim']
 augroup hiPairs
     autocmd! VimEnter,ColorScheme * call s:DisableMatchParen() | call s:InitColor()
-    autocmd! CursorMoved,CursorMovedI,WinEnter * if index(blacklist, &ft) < 0 |call s:HiPairs(0)
-    autocmd! CursorHold,CursorHoldI * if index(blacklist, &ft) < 0 |call s:HiPairs(1)
+    " autocmd! CursorMoved,CursorMovedI,WinEnter * if index(blacklist, &ft) < 0 |call s:HiPairs(0)
+    autocmd! CursorHold,CursorHoldI,WinEnter * if index(blacklist, &ft) < 0 |call s:HiPairs(0)
 augroup END
 
 " Skip the rest if it was already done.
